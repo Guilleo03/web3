@@ -1,15 +1,20 @@
+import DragAndDrop from "@/components/drag-and-drop"
+
 export default function IndexPage() {
   return (
-    <section className="container grid items-center gap-6 pb-8 pt-6 md:py-10">
-      <div className="flex max-w-[980px] flex-col items-start gap-2">
-        <h1 className="text-3xl font-extrabold leading-tight tracking-tighter md:text-4xl">
-          Beautifully designed components <br className="hidden sm:inline" />
-          built with Radix UI and Tailwind CSS.
-        </h1>
-        <p className="max-w-[700px] text-lg text-muted-foreground">
-          Accessible and customizable components that you can copy and paste
-          into your apps. Free. Open Source. And Next.js 13 Ready.
-        </p>
+    <section className="container pb-8 pt-6 md:py-10">
+      <div className="flex flex-col md:flex-row items-start gap-x-24">
+        <div className="flex-1">
+          <h1 className="text-3xl font-extrabold leading-tight tracking-tighter md:text-3xl mb-4">
+            Te dire si un producto envasado es saludable
+          </h1>
+          <p className="mb-4 text-lg text-muted-foreground">
+            Sube una imagen o toma una foto de los ingredientes o tabla de
+            nutricional del producto envasado y te dire si es saludable
+          </p>
+          <DragAndDrop />
+        </div>
+        <div className="flex-1">response</div>
       </div>
     </section>
   )
