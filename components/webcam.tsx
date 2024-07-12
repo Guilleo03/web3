@@ -1,13 +1,33 @@
 "use client";
 
-import { Webcam } from "@webcam/react";
+import Webcam from "react-webcam";
 
-export const ButtonWebcam = () => (
-  <Webcam>
-    {({ getSnapshot }) => (
-      <button onClick={() => console.log(getSnapshot({ quality: 0.8 }))}>
-        Make photo
-      </button>
-    )}
-  </Webcam>
-);
+export const ButtonWebcam = () => {
+  const videoConstraints = {
+    width: 1280,
+    height: 720,
+    facingMode: "user",
+  };
+
+  return (
+    <Webcam
+      audio={false}
+      height={720}
+      screenshotFormat="image/jpeg"
+      width={1280}
+      videoConstraints={videoConstraints}
+    >
+      {/* @ts-ignore */}
+      {({ getScreenshot }) => (
+        <button
+          onClick={() => {
+            const imageSrc = getScreenshot();
+            console.log(imageSrc);
+          }}
+        >
+          Capture photo
+        </button>
+      )}
+    </Webcam>
+  );
+};
