@@ -10,7 +10,7 @@ export default function IndexPage() {
       <div className="flex flex-col md:flex-row items-start gap-x-24">
         <div className="flex-1">
           <Presentation />
-          <ButtonWebcam />
+          {/* <ButtonWebcam /> */}
           <DragAndDrop />
           <p className="text-xs mt-2">
             Tamaño máximo para la imagen: {MAX_IMAGE_SIZE}mb
