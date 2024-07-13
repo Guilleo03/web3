@@ -1,14 +1,18 @@
 "use client";
 
 import { Button } from "./ui/button";
+import { testAI } from "@/app/actions/ai";
+import { getBase64FromFile } from "@/utils/common";
 import { useStore } from "@/utils/store";
 import { Sparkles, Trash, Camera } from "lucide-react";
 
 const Actions = () => {
   const { image, setImage, error } = useStore();
 
-  const requestInfo = () => {
-    console.log("action");
+  const requestInfo = async () => {
+    const base64 = await getBase64FromFile(image as File);
+    const result = await testAI(base64);
+    console.log(result);
   };
 
   const handleDelete = () => setImage(undefined);

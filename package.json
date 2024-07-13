@@ -14,7 +14,10 @@
     "format:check": "prettier --check \"**/*.{ts,tsx,mdx}\" --cache"
   },
   "dependencies": {
+    "@ai-sdk/google": "^0.0.27",
+    "@google/generative-ai": "^0.14.1",
     "@radix-ui/react-slot": "^1.0.2",
+    "ai": "^3.2.22",
     "class-variance-authority": "^0.4.0",
     "clsx": "^1.2.1",
     "lucide-react": "^0.408.0",
@@ -27,6 +30,7 @@
     "sharp": "^0.31.3",
     "tailwind-merge": "^1.13.2",
     "tailwindcss-animate": "^1.0.6",
+    "zod": "^3.23.8",
     "zustand": "^4.5.4"
   },
   "devDependencies": {
