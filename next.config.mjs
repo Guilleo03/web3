@@ -2,7 +2,6 @@
 const nextConfig = {
   reactStrictMode: true,
   experimental: {
-    appDir: true,
     serverActions: {
       bodySizeLimit: "10mb",
     },
