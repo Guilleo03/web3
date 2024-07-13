@@ -1,4 +1,4 @@
-export const MAX_IMAGE_SIZE = 6;
+export const MAX_IMAGE_SIZE = 10;
 
 export const getBase64FromFile = (file: File): Promise<string> => {
   return new Promise((resolve, reject) => {

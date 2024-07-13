@@ -4,7 +4,7 @@ import { Button } from "./ui/button";
 import { testAI } from "@/app/actions/ai";
 import { getBase64FromFile } from "@/utils/common";
 import { useStore } from "@/utils/store";
-import { Sparkles, Trash, Camera } from "lucide-react";
+import { Sparkles, Trash } from "lucide-react";
 
 const Actions = () => {
   const { image, setImage, error } = useStore();
@@ -25,21 +25,13 @@ const Actions = () => {
           {image && (
             <Button
               onClick={handleDelete}
-              className="px-8 text-destructive border-destructive hover:bg-transparent hover:text-destructive flex items-center gap-x-1"
-              variant={"outline"}
+              className="px-8 hover:bg-destructive flex items-center gap-x-1"
+              variant={"destructive"}
             >
               <Trash className="h-4 w-4" />
               Eliminar foto
             </Button>
           )}
-          <Button
-            onClick={handleDelete}
-            className="px-8 flex items-center gap-x-1 border-primary hover:bg-transparent"
-            variant={"outline"}
-          >
-            <Camera className="h-4 w-4" />
-            Tomar foto
-          </Button>
           <form action={requestInfo}>
             <Button
               type="submit"

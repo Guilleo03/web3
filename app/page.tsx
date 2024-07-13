@@ -1,24 +1,17 @@
-import Actions from "@/components/actions";
-import DragAndDrop from "@/components/drag-and-drop";
 import Presentation from "@/components/presentation";
-import { ButtonWebcam } from "@/components/webcam";
-import { MAX_IMAGE_SIZE } from "@/utils/common";
+import { Response } from "@/components/response";
+import { TakePhotoDialog } from "@/components/take-photo-dialog";
+import { UploadFileDialog } from "@/components/upload-file-dialog";
 
 export default function IndexPage() {
   return (
-    <section className="container pb-8 pt-6 md:py-10">
-      <div className="flex flex-col md:flex-row items-start gap-x-24">
-        <div className="flex-1">
-          <Presentation />
-          {/* <ButtonWebcam /> */}
-          <DragAndDrop />
-          <p className="text-xs mt-2">
-            Tamaño máximo para la imagen: {MAX_IMAGE_SIZE}mb
-          </p>
-          <Actions />
-        </div>
-        <div className="flex-1">response</div>
+    <section className="container max-w-[920px] pb-8 pt-6 md:py-10">
+      <Presentation />
+      <div className="flex gap-10 justify-center items-center">
+        <UploadFileDialog />
+        <TakePhotoDialog />
       </div>
+      <Response />
     </section>
   );
 }
