@@ -1,24 +1,28 @@
 "use server";
 
 import { createGoogleGenerativeAI } from "@ai-sdk/google";
-import { GoogleGenerativeAI } from "@google/generative-ai";
-import { streamText } from "ai";
+import { generateText } from "ai";
 
-const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY as string);
+const google = createGoogleGenerativeAI({
+  apiKey: process.env.GEMINI_API_KEY,
+});
 
 export async function testAI(base64: string) {
   const imageData = base64.split(",")[1];
-  const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
-  const prompt = "Describe esta imagen, responde en español";
-  const image = {
-    inlineData: {
-      data: imageData,
-      mimeType: "image/jpeg",
-    },
-  };
 
-  const result = await model.generateContent([prompt, image]);
-  const data = result.response.text();
-  console.log(data);
-  return data;
+  const { text } = await generateText({
+    model: google("models/gemini-1.5-pro-latest"),
+    messages: [
+      {
+        role: "user",
+        content: [
+          { type: "text", text: "Describe esta imagen" },
+          { type: "image", image: imageData, mimeType: "image/jpeg" },
+        ],
+      },
+    ],
+  });
+
+  console.log(text.toString());
+  return text.toString();
 }
