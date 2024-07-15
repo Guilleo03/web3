@@ -1,7 +1,7 @@
 "use client";
 
 import placeholder from "@/images/upload-file.svg";
-import { cn } from "@/lib/utils";
+import { cn } from "@/utils/common";
 import { MAX_IMAGE_SIZE } from "@/utils/common";
 import { uploadFileErrors, UploadFileErrorType } from "@/utils/file";
 import { useStore } from "@/utils/store";

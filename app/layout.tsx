@@ -3,7 +3,7 @@ import { SiteHeader } from "@/components/site-header";
 import { TailwindIndicator } from "@/components/tailwind-indicator";
 import { ThemeProvider } from "@/components/theme-provider";
 import { siteConfig } from "@/config/site";
-import { cn } from "@/lib/utils";
+import { cn } from "@/utils/common";
 import { Metadata } from "next";
 import "@fontsource/poppins/300.css";
 import "@fontsource/poppins/400.css";
