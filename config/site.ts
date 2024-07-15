@@ -1,4 +1,4 @@
-export type SiteConfig = typeof siteConfig
+export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
   name: "FoodAI",
@@ -12,4 +12,4 @@ export const siteConfig = {
   links: {
     linkedin: "https://www.linkedin.com/in/guillermo-otegui/",
   },
-}
+};

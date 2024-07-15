@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "./ui/button";
-import { testAI } from "@/app/actions/ai";
+import { readImage } from "@/app/actions/ai";
 import { getBase64FromFile } from "@/utils/common";
 import { useStore } from "@/utils/store";
 import { Sparkles, Trash } from "lucide-react";
@@ -11,7 +11,7 @@ const Actions = () => {
 
   const requestInfo = async () => {
     const base64 = await getBase64FromFile(image as File);
-    const result = await testAI(base64);
+    const result = await readImage(base64);
     console.log(result);
   };
 

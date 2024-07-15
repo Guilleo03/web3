@@ -7,7 +7,7 @@ const google = createGoogleGenerativeAI({
   apiKey: process.env.GEMINI_API_KEY,
 });
 
-export async function testAI(base64: string) {
+export async function readImage(base64: string) {
   const imageData = base64.split(",")[1];
 
   const { text } = await generateText({
@@ -23,6 +23,5 @@ export async function testAI(base64: string) {
     ],
   });
 
-  console.log(text.toString());
   return text.toString();
 }
