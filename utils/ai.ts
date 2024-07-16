@@ -34,3 +34,17 @@ Si la imagen es de un producto envasado pero no puedes leerla, ya sea por mala c
 Si la imagen no es de un producto envasado dimelo en la respuesta y no me des una puntuacion.
 
 Responde siempre en español.`;
+
+export const HELATHY_BAR_COLORS: any = {
+  0: "#eb4138",
+  1: "#eb4138",
+  2: "#eb4138",
+  3: "#eb4138",
+  4: "#edc939",
+  5: "#edc939",
+  6: "#edc939",
+  7: "#8aeb3f",
+  8: "#8aeb3f",
+  9: "#8aeb3f",
+  10: "#8aeb3f",
+};
