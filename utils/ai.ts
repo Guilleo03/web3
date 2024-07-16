@@ -23,3 +23,14 @@ export function removeFinalScoreFromResponse(response: string): string {
 
   return response;
 }
+
+export const prompt = `Lee los ingredientes o tabla nutricional de este producto envasado y dime si es saludable o no y una breve explicacion, esta explicacion debe tener como maximo 120 palabras y debe estar separada por parrafos claros. Separa los parrafos con el caracter "\n"
+En caso de no ser saludable dame algunas alernativas.
+
+Y por ultimo dame una puntuacion del 1 (no saludable) al 10 (muy saludable). Esta puntuacion damela al final, la puntuacion debe estar escrita posteriormente de la palabra "final_score:"
+
+Si la imagen es de un producto envasado pero no puedes leerla, ya sea por mala calidad de la imagen o porque no tenga los ingredientes o tabla nutricional dimelo en la respuesta y no me des una puntuacion.
+
+Si la imagen no es de un producto envasado dimelo en la respuesta y no me des una puntuacion.
+
+Responde siempre en español.`;

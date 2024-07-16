@@ -1,13 +1,12 @@
 "use server";
 
+import { prompt } from "@/utils/ai";
 import { createGoogleGenerativeAI } from "@ai-sdk/google";
 import { generateText } from "ai";
 
 const google = createGoogleGenerativeAI({
   apiKey: process.env.GEMINI_API_KEY,
 });
-
-const prompt = process.env.SECRET_PROMPT as string;
 
 export async function readImage(base64: string) {
   try {

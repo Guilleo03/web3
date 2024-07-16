@@ -17,7 +17,7 @@ export const Result = () => {
             <Response score={score} text={response} />
           ) : (
             <>
-              <Response score={score} text={response} />
+              <Response score={8} text={response} />
             </>
           )}
         </>
