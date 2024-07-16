@@ -14,10 +14,10 @@ const Actions = () => {
     const base64 = await getBase64FromFile(image as File);
     const result = (await readImage(base64)) as string;
 
-    const response = removeFinalScoreFromResponse(result);
+    // const response = removeFinalScoreFromResponse(result);
     const score = getFinalScore(result) as number;
 
-    setResponse(response);
+    setResponse(result);
     setScore(score);
   };
 
