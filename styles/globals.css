@@ -40,13 +40,15 @@
     --background: 100, 9%, 16%;
     --foreground: 213 31% 91%;
 
+    /* 126°, 8%, 24% */
+
     --muted: 160°, 28%, 41%;
     --muted-foreground: 120, 0%, 89%;
 
     --accent: 216 34% 17%;
     --accent-foreground: 210 40% 98%;
 
-    --popover: 224 71% 4%;
+    --popover: 126, 8%, 24%;
     --popover-foreground: 215 20.2% 65.1%;
 
     --border: 101, 16%, 69%;

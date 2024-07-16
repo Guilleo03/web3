@@ -24,7 +24,8 @@ const HealthyBar = ({ score }: IHealthyBar) => {
   }, []);
 
   return (
-    <div>
+    <div className="mt-10 pb-4">
+      <p className="font-bold mb-4">Resultado final: {score}</p>
       <div
         id="healthy-bar"
         className="w-full rounded-full h-2 bg-slate-200 relative before:absolute before:h-full before:top-0 before:left-0 before:rounded-full before:w-0 before:transition-all before:duration-1000"
