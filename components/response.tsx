@@ -1,14 +1,29 @@
 "use client";
 
+import { Loader } from "./loader";
 import { useStore } from "@/utils/store";
 
 export const Response = () => {
-  const { response, score } = useStore();
+  const { response, score, isLoading } = useStore();
 
   return (
-    <div className="w-full rounded-lg bg-slate-100 h-full">
-      <p>{response}</p>
-      <p>Resultado final: {score}</p>
+    <div className="w-full rounded-lg">
+      {isLoading ? (
+        <Loader />
+      ) : (
+        <>
+          {response ? (
+            <div>
+              <p>{response}</p>
+              {score && <p>Resultado final: {score}</p>}
+            </div>
+          ) : (
+            <>
+              <Loader />
+            </>
+          )}
+        </>
+      )}
     </div>
   );
 };

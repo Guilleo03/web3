@@ -1,3 +1,5 @@
+"use client";
+
 import Actions from "./actions";
 import DragAndDrop from "./drag-and-drop";
 import { Button } from "./ui/button";
@@ -9,11 +11,14 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import { useStore } from "@/utils/store";
 import { FileUp } from "lucide-react";
 
 export const UploadFileDialog = () => {
+  const { setOpenFileDialog, openFileDialog } = useStore();
+
   return (
-    <Dialog>
+    <Dialog open={openFileDialog} onOpenChange={setOpenFileDialog}>
       <DialogTrigger asChild>
         <Button className="px-8 hover:bg-primary hover:opacity-80 transition-all flex items-center gap-x-1 whitespace-nowrap">
           <FileUp className="h-4 w-4" />

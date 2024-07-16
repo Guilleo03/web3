@@ -14,11 +14,11 @@ export function getFinalScore(response: string): number | null {
 }
 
 export function removeFinalScoreFromResponse(response: string): string {
-  const searchString = "final_score:";
-  const startIndex = response.indexOf(searchString);
+  const keyword = "final_score";
+  const index = response.indexOf(keyword);
 
-  if (startIndex !== -1) {
-    return response.substring(startIndex + searchString.length);
+  if (index !== -1) {
+    return response.substring(0, index);
   }
 
   return response;

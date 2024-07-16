@@ -8,17 +8,37 @@ import { useStore } from "@/utils/store";
 import { Sparkles, Trash } from "lucide-react";
 
 const Actions = () => {
-  const { image, setImage, error, setResponse, setScore } = useStore();
+  const {
+    image,
+    setImage,
+    error,
+    setResponse,
+    setScore,
+    setOpenFileDialog,
+    setOpenPhotoDialog,
+    setError,
+    setIsLoading,
+  } = useStore();
 
   const requestInfo = async () => {
-    const base64 = await getBase64FromFile(image as File);
-    const result = (await readImage(base64)) as string;
+    try {
+      setOpenFileDialog(false);
+      setOpenPhotoDialog(false);
+      setIsLoading(true);
 
-    // const response = removeFinalScoreFromResponse(result);
-    const score = getFinalScore(result) as number;
+      const base64 = await getBase64FromFile(image as File);
+      const result = (await readImage(base64)) as string;
 
-    setResponse(result);
-    setScore(score);
+      const response = removeFinalScoreFromResponse(result);
+      const score = getFinalScore(result) as number;
+
+      setResponse(response);
+      setScore(score);
+    } catch (e) {
+      setError(e as string);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const handleDelete = () => setImage(undefined);
