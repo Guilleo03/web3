@@ -2,17 +2,23 @@
 
 import { Button } from "./ui/button";
 import { readImage } from "@/app/actions/ai";
+import { getFinalScore, removeFinalScoreFromResponse } from "@/utils/ai";
 import { getBase64FromFile } from "@/utils/common";
 import { useStore } from "@/utils/store";
 import { Sparkles, Trash } from "lucide-react";
 
 const Actions = () => {
-  const { image, setImage, error } = useStore();
+  const { image, setImage, error, setResponse, setScore } = useStore();
 
   const requestInfo = async () => {
     const base64 = await getBase64FromFile(image as File);
-    const result = await readImage(base64);
-    console.log(result);
+    const result = (await readImage(base64)) as string;
+
+    const response = removeFinalScoreFromResponse(result);
+    const score = getFinalScore(result) as number;
+
+    setResponse(response);
+    setScore(score);
   };
 
   const handleDelete = () => setImage(undefined);

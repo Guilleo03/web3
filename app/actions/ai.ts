@@ -7,6 +7,8 @@ const google = createGoogleGenerativeAI({
   apiKey: process.env.GEMINI_API_KEY,
 });
 
+const prompt = process.env.SECRET_PROMPT as string;
+
 export async function readImage(base64: string) {
   const imageData = base64.split(",")[1];
 
@@ -16,7 +18,7 @@ export async function readImage(base64: string) {
       {
         role: "user",
         content: [
-          { type: "text", text: "Describe esta imagen" },
+          { type: "text", text: prompt },
           { type: "image", image: imageData, mimeType: "image/jpeg" },
         ],
       },

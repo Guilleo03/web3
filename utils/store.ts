@@ -6,6 +6,12 @@ interface Store {
 
   error: string;
   setError: (msg: string) => void;
+
+  score: number | undefined;
+  setScore: (score: number) => void;
+
+  response: string;
+  setResponse: (response: string) => void;
 }
 
 export const useStore = create<Store>()((set) => ({
@@ -14,4 +20,10 @@ export const useStore = create<Store>()((set) => ({
 
   error: "",
   setError: (msg) => set({ error: msg }),
+
+  score: undefined,
+  setScore: (msg) => set({ score: msg }),
+
+  response: "",
+  setResponse: (msg) => set({ response: msg }),
 }));
