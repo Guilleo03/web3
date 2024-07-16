@@ -1,29 +1,15 @@
-"use client";
+import React from "react";
 
-import { Loader } from "./loader";
-import { useStore } from "@/utils/store";
+interface IResponse {
+  text: string;
+  score: number | undefined;
+}
 
-export const Response = () => {
-  const { response, score, isLoading } = useStore();
-
+export const Response = ({ text, score }: IResponse) => {
   return (
-    <div className="w-full rounded-lg">
-      {isLoading ? (
-        <Loader />
-      ) : (
-        <>
-          {response ? (
-            <div>
-              <p>{response}</p>
-              {score && <p>Resultado final: {score}</p>}
-            </div>
-          ) : (
-            <>
-              <Loader />
-            </>
-          )}
-        </>
-      )}
+    <div className="md:mt-16 mt-5 bg-slate-50 rounded-xl p-6">
+      <p>{text}</p>
+      {score && <p className="font-bold">Resultado final: {score}</p>}
     </div>
   );
 };

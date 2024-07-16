@@ -3,7 +3,7 @@ import { Player } from "@lottiefiles/react-lottie-player";
 
 export const Loader = () => {
   return (
-    <div className="mt-24">
+    <div className="md:mt-24 mt-6">
       <Player
         autoplay
         loop

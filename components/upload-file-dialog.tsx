@@ -20,7 +20,7 @@ export const UploadFileDialog = () => {
   return (
     <Dialog open={openFileDialog} onOpenChange={setOpenFileDialog}>
       <DialogTrigger asChild>
-        <Button className="px-8 hover:bg-primary hover:opacity-80 transition-all flex items-center gap-x-1 whitespace-nowrap">
+        <Button className="md:px-8 px-4 hover:bg-primary hover:opacity-80 transition-all flex items-center gap-x-1 whitespace-nowrap">
           <FileUp className="h-4 w-4" />
           Subir archivo
         </Button>
