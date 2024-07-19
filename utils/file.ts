@@ -22,21 +22,33 @@ export async function compressImage(image: File) {
   }
 }
 
-export function validateImage(image: File): boolean {
-  // size validation
-  const fileSize = (image?.size as number) / (1024 * 1024);
-  if (fileSize >= 4) return false;
+export function validateImage(image: File): Promise<boolean> {
+  return new Promise((resolve, reject) => {
+    // Size validation
+    const fileSize = image.size / (1024 * 1024);
+    if (fileSize >= 4) {
+      resolve(false);
+      return;
+    }
 
-  // resolution validation
-  const img = new Image();
-  img.src = URL.createObjectURL(image as File);
-  let imgResolution = { width: img.width, height: img.height };
+    // Resolution validation
+    const img = new Image();
+    img.src = URL.createObjectURL(image);
 
-  img.onload = () => {
-    imgResolution = { width: img.width, height: img.height };
-  };
+    img.onload = () => {
+      const imgResolution = { width: img.width, height: img.height };
+      URL.revokeObjectURL(img.src);
 
-  if (imgResolution.width > 1920 || imgResolution.height > 2000) return false;
+      if (imgResolution.width > 1920 || imgResolution.height > 2000) {
+        resolve(false);
+      } else {
+        resolve(true);
+      }
+    };
 
-  return true;
+    img.onerror = () => {
+      URL.revokeObjectURL(img.src);
+      reject(new Error("Failed to load image."));
+    };
+  });
 }

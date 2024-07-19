@@ -29,7 +29,7 @@ const Actions = () => {
 
       let imageToUpload = image;
 
-      const isValidImage = validateImage(imageToUpload as File);
+      const isValidImage = await validateImage(imageToUpload as File);
 
       if (!isValidImage) {
         const compressedImage = await compressImage(image as File);
