@@ -4,7 +4,7 @@ import { Button } from "./ui/button";
 import { readImage } from "@/app/actions/ai";
 import { getFinalScore, removeFinalScoreFromResponse } from "@/utils/ai";
 import { getBase64FromFile } from "@/utils/common";
-import { compressImage } from "@/utils/file";
+import { compressImage, validateImage } from "@/utils/file";
 import { useStore } from "@/utils/store";
 import { Sparkles, Trash } from "lucide-react";
 
@@ -27,13 +27,11 @@ const Actions = () => {
       setOpenPhotoDialog(false);
       setIsLoading(true);
 
-      const fileSize = (image?.size as number) / (1024 * 1024);
-
-      console.log(fileSize);
-
       let imageToUpload = image;
 
-      if (fileSize >= 4) {
+      const isValidImage = validateImage(imageToUpload as File);
+
+      if (!isValidImage) {
         const compressedImage = await compressImage(image as File);
         imageToUpload = compressedImage;
       }
