@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export function MainNav() {
+export function Logo() {
   return (
     <div className="flex gap-6 md:gap-10">
       <Link href="/" className="flex items-center space-x-2">

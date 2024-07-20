@@ -44,6 +44,8 @@ const Actions = () => {
 
       setResponse(response);
       setScore(score);
+      setError("");
+      setImage(undefined);
     } catch (e) {
       setError(e as string);
     } finally {
