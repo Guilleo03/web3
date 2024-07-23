@@ -3,7 +3,7 @@
 import { Button } from "./ui/button";
 import { readImage } from "@/app/actions/ai";
 import { getFinalScore, removeFinalScoreFromResponse } from "@/utils/ai";
-import { getBase64FromFile } from "@/utils/common";
+import { getBase64FromFile } from "@/utils/file";
 import { compressImage, validateImage } from "@/utils/file";
 import { useStore } from "@/utils/store";
 import { Sparkles, Trash } from "lucide-react";

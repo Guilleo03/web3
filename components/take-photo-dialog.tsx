@@ -1,4 +1,5 @@
 import Actions from "./actions";
+import { TakePhotoContent } from "./take-photo-content";
 import { Button } from "./ui/button";
 import {
   Dialog,
@@ -8,7 +9,6 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { ButtonWebcam } from "@/components/webcam";
 import { Camera } from "lucide-react";
 
 export const TakePhotoDialog = () => {
@@ -22,13 +22,13 @@ export const TakePhotoDialog = () => {
       </DialogTrigger>
       <DialogContent className="md:min-w-[60vw] min-w-[95vw]">
         <DialogHeader>
-          <DialogTitle>Subir archivo</DialogTitle>
+          <DialogTitle>Tomar foto</DialogTitle>
           <DialogDescription>
-            Puedes subir un archivo, arrastrarlo o pegarlo de tu portapapeles.
+            Toma una foto de tu producto envasado para leer la información.
           </DialogDescription>
         </DialogHeader>
-        <ButtonWebcam />
-        <Actions />
+        <TakePhotoContent />
+        {/* <Actions /> */}
       </DialogContent>
     </Dialog>
   );

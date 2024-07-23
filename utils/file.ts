@@ -52,3 +52,37 @@ export function validateImage(image: File): Promise<boolean> {
     };
   });
 }
+
+export function getFileFromBase64(base64String: string): File {
+  const buffer = Buffer.from(base64String, "base64");
+  const byteCharacters = buffer.toString("base64");
+
+  const byteNumbers = new Array(byteCharacters.length);
+
+  for (let i = 0; i < byteCharacters.length; i++) {
+    byteNumbers[i] = byteCharacters.charCodeAt(i);
+  }
+
+  const byteArray = new Uint8Array(byteNumbers);
+
+  // Create a Blob from the decoded data
+  const blob = new Blob([byteArray], { type: "image/jpeg" });
+
+  // Create a file from the Blob
+  return new File([blob], "product.jpeg", { type: "image/jpeg" });
+}
+
+export const getBase64FromFile = (file: File): Promise<string> => {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => {
+      if (reader.result) {
+        resolve(reader.result as string);
+      } else {
+        reject(new Error("Error converting file to base64"));
+      }
+    };
+    reader.onerror = (error) => reject(error);
+  });
+};

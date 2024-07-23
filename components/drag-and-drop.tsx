@@ -1,5 +1,6 @@
 "use client";
 
+import { Preview } from "./preview";
 import placeholder from "@/images/upload-file.svg";
 import { cn } from "@/utils/common";
 import { MAX_IMAGE_SIZE } from "@/utils/common";
@@ -60,18 +61,7 @@ const DragAndDrop: React.FC = () => {
         )}
       >
         {preview ? (
-          <div>
-            <Image
-              src={preview}
-              alt="Imagen del producto envasado"
-              width={350}
-              height={600}
-              style={{
-                objectFit: "contain",
-                margin: "10px",
-              }}
-            />
-          </div>
+          <Preview imagePath={preview} />
         ) : (
           <div>
             <input {...getInputProps()} />
