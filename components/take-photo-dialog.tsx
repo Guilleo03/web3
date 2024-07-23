@@ -15,7 +15,7 @@ export const TakePhotoDialog = () => {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button className="md:px-8 px-4 hover:bg-primary hover:opacity-80 transition-all flex items-center gap-x-1 whitespace-nowrap">
+        <Button className="md:px-8 px-4 hover:bg-primary hover:opacity-80 transition-all flex items-center gap-x-1 whitespace-nowrap dark:bg-primary bg-gradient-to-r from-primary to-[#29c233] dark:to-primary">
           <Camera className="h-4 w-4" />
           Tomar foto
         </Button>

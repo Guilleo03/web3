@@ -73,7 +73,7 @@ const Actions = () => {
           <form action={requestInfo}>
             <Button
               type="submit"
-              className="px-8 hover:bg-primary hover:opacity-80 transition-all flex items-center gap-x-1"
+              className="px-8 hover:bg-primary hover:opacity-80 transition-all flex items-center gap-x-1 dark:bg-primary bg-gradient-to-r from-primary to-[#29c233] dark:to-primary"
               disabled={image ? false : true}
             >
               <Sparkles className="h-4 w-4" />
