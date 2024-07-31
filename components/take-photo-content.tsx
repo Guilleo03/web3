@@ -1,5 +1,6 @@
 "use client";
 
+import Actions from "./actions";
 import { Preview } from "./preview";
 import { ButtonWebcam } from "@/components/webcam";
 import { useStore } from "@/utils/store";
@@ -19,7 +20,10 @@ export const TakePhotoContent = () => {
   return (
     <>
       {image && preview ? (
-        <Preview imagePath={preview as string} />
+        <>
+          <Preview imagePath={preview as string} />
+          <Actions />
+        </>
       ) : (
         <ButtonWebcam />
       )}

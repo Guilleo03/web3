@@ -53,23 +53,12 @@ export function validateImage(image: File): Promise<boolean> {
   });
 }
 
-export function getFileFromBase64(base64String: string): File {
-  const buffer = Buffer.from(base64String, "base64");
-  const byteCharacters = buffer.toString("base64");
-
-  const byteNumbers = new Array(byteCharacters.length);
-
-  for (let i = 0; i < byteCharacters.length; i++) {
-    byteNumbers[i] = byteCharacters.charCodeAt(i);
-  }
-
-  const byteArray = new Uint8Array(byteNumbers);
-
-  // Create a Blob from the decoded data
-  const blob = new Blob([byteArray], { type: "image/jpeg" });
-
-  // Create a file from the Blob
-  return new File([blob], "product.jpeg", { type: "image/jpeg" });
+export async function getFileFromBase64(base64String: string) {
+  return fetch(base64String)
+    .then((res) => res.blob())
+    .then((blob) => {
+      return new File([blob], "File name", { type: "image/png" });
+    });
 }
 
 export const getBase64FromFile = (file: File): Promise<string> => {
@@ -86,3 +75,11 @@ export const getBase64FromFile = (file: File): Promise<string> => {
     reader.onerror = (error) => reject(error);
   });
 };
+
+export function removeBase64Prefix(base64String: string): string {
+  const prefix = "data:image/jpeg;base64,";
+  if (base64String.startsWith(prefix)) {
+    return base64String.substring(prefix.length);
+  }
+  return base64String;
+}

@@ -5,8 +5,6 @@ interface IPreview {
 }
 
 export const Preview = ({ imagePath }: IPreview) => {
-  console.log(imagePath);
-
   return (
     <div>
       <Image
@@ -16,7 +14,7 @@ export const Preview = ({ imagePath }: IPreview) => {
         height={600}
         style={{
           objectFit: "contain",
-          margin: "10px",
+          margin: "0 auto",
         }}
       />
     </div>

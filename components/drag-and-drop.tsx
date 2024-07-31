@@ -18,6 +18,7 @@ const DragAndDrop: React.FC = () => {
 
   const onDropAccepted = useCallback((acceptedFiles: File[]) => {
     const newPreviews = URL.createObjectURL(acceptedFiles[0]);
+
     setImage(acceptedFiles[0]);
     setPreview(newPreviews);
     setError("");
