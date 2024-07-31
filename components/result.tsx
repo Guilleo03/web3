@@ -2,7 +2,6 @@
 
 import { Loader } from "./loader";
 import { Response } from "./response";
-import mock from "@/mock/ai-response.json";
 import { useStore } from "@/utils/store";
 
 export const Result = () => {
