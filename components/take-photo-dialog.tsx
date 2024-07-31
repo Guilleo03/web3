@@ -24,10 +24,10 @@ export const TakePhotoDialog = () => {
           Tomar foto
         </Button>
       </DialogTrigger>
-      <DialogContent className="md:min-w-[60vw] min-w-[95vw]">
+      <DialogContent className="md:min-w-[60vw] min-w-[95vw] overflow-y-scroll max-h-screen">
         <DialogHeader>
           <DialogTitle>Tomar foto</DialogTitle>
-          <DialogDescription>
+          <DialogDescription className="text-left">
             Toma una foto de tu producto envasado para leer la información.
           </DialogDescription>
         </DialogHeader>

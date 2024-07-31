@@ -75,11 +75,3 @@ export const getBase64FromFile = (file: File): Promise<string> => {
     reader.onerror = (error) => reject(error);
   });
 };
-
-export function removeBase64Prefix(base64String: string): string {
-  const prefix = "data:image/jpeg;base64,";
-  if (base64String.startsWith(prefix)) {
-    return base64String.substring(prefix.length);
-  }
-  return base64String;
-}

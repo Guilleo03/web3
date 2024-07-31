@@ -25,10 +25,10 @@ export const UploadFileDialog = () => {
           Subir archivo
         </Button>
       </DialogTrigger>
-      <DialogContent>
+      <DialogContent className="overflow-y-scroll max-h-screen">
         <DialogHeader>
           <DialogTitle>Subir archivo</DialogTitle>
-          <DialogDescription>
+          <DialogDescription className="text-left">
             Puedes subir un archivo, arrastrarlo o pegarlo de tu portapapeles.
           </DialogDescription>
         </DialogHeader>

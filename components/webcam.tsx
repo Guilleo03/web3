@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "./ui/button";
-import { getFileFromBase64, removeBase64Prefix } from "@/utils/file";
+import { getFileFromBase64 } from "@/utils/file";
 import { useStore } from "@/utils/store";
 import { Camera } from "lucide-react";
 import Webcam from "react-webcam";
@@ -21,7 +21,10 @@ export const ButtonWebcam = () => {
       screenshotFormat="image/jpeg"
       videoConstraints={videoConstraints}
       screenshotQuality={1}
-      style={{ margin: "0 auto" }}
+      className="w-[90%] sm:w-[75%] md:w-[90%] lg:w-[70%] xl:w-[60%] 2xl:w-[45%] h-full"
+      style={{
+        margin: "0 auto",
+      }}
     >
       {/* @ts-ignore */}
       {({ getScreenshot }) => (
