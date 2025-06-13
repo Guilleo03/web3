@@ -7,7 +7,7 @@ export default function AutorizacionPage() {
     <div className="flex h-full flex-col bg-[#111827] text-white">
       {/* Header */}
       <header className="flex items-center justify-between p-6">
-        <Link href="/accesos" className="text-white">
+        <Link href="/" className="text-white">
           <X className="size-6" />
         </Link>
         <h1 className="text-xl font-semibold">Autorización de acceso</h1>
@@ -40,9 +40,13 @@ export default function AutorizacionPage() {
 
         <div className="border-t border-gray-700 py-4">
           <p className="mb-1 text-sm text-gray-400">Duración del acceso</p>
-          <div className="inline-block rounded bg-gray-700 px-3 py-1 text-sm">
-            1 año
-          </div>
+          <select className="inline-block rounded bg-gray-700 px-3 py-1 text-sm">
+            <option value="1">1 año</option>
+            <option value="2">2 años</option>
+            <option value="3">3 años</option>
+            <option value="4">4 años</option>
+            <option value="5">5 años</option>
+          </select>
         </div>
 
         <div className="border-t border-gray-700 py-4">
@@ -53,17 +57,9 @@ export default function AutorizacionPage() {
           </p>
         </div>
 
-        {/* Fingerprint Section */}
-        <div className="mb-8 mt-4 flex flex-col items-center justify-center rounded-lg border border-dashed border-gray-600 p-6">
-          <h4 className="mb-2 text-lg font-medium">Pone tu huella</h4>
-          <p className="text-center text-sm text-gray-400">
-            Al poner tu huella concedes el acceso
-          </p>
-        </div>
-
         {/* Confirm Button */}
-        <button className="w-full rounded-md bg-blue-600 px-4 py-3 text-white transition-colors hover:bg-blue-700">
-          Confirmar
+        <button className="w-full rounded-full bg-blue-600 px-4 py-3 text-white transition-colors hover:bg-blue-700">
+          Autorizar acceso
         </button>
       </main>
     </div>
