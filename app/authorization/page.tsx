@@ -1,3 +1,4 @@
+import Doctor from "../../public/doctor.jpg";
 import { X, CheckCircle, UserIcon, User } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -17,10 +18,16 @@ export default function AutorizacionPage() {
       {/* Doctor Profile Section */}
       <section className="mb-8 mt-2 flex flex-col items-center">
         <div className="mb-4 size-24 overflow-hidden rounded-full bg-[#f8e3cb]">
-          <UserIcon size={92} />
+          <Image
+            src={Doctor}
+            alt="Julieta"
+            width={96}
+            height={96}
+            className="object-cover"
+          />
         </div>
         <h2 className="text-xl font-semibold">Dr. Ethan Carter</h2>
-        <p className="text-gray-400">Cardiólogo</p>
+        <p className="text-gray-400">Cardióloga</p>
         <div className="mt-1 flex items-center text-sm text-gray-400">
           <CheckCircle className="mr-1 size-4 text-green-500" />
           <span>Verificado</span>

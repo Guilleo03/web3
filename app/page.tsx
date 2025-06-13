@@ -1,7 +1,10 @@
+import Julieta from "../public/julieta.png";
 import { Calendar, Home, FileText, Menu, Settings, Plus } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import type React from "react";
+
+// Adjust the path as necessary
 
 export default function HomePage() {
   return (
@@ -19,15 +22,15 @@ export default function HomePage() {
       <section className="mb-6 mt-2 flex flex-col items-center">
         <div className="mb-4 size-24 overflow-hidden rounded-full bg-[#f8e3cb]">
           <Image
-            src="/placeholder.svg?height=96&width=96"
-            alt="Sofía Perez"
+            src={Julieta}
+            alt="Julieta"
             width={96}
             height={96}
             className="object-cover"
           />
         </div>
-        <h2 className="text-xl font-semibold">Sofía Perez</h2>
-        <p className="text-gray-400">Edad: 35</p>
+        <h2 className="text-xl font-semibold">Julieta Poyet</h2>
+        <p className="text-gray-400">Edad: 29</p>
       </section>
 
       {/* Main Content */}
