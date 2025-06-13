@@ -3,7 +3,14 @@ const { fontFamily } = require("tailwindcss/defaultTheme");
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ["class"],
-  content: ["app/**/*.{ts,tsx}", "components/**/*.{ts,tsx}"],
+  content: [
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+    "*.{js,ts,jsx,tsx,mdx}",
+  ],
+  prefix: "",
   theme: {
     container: {
       center: true,
@@ -49,44 +56,23 @@ module.exports = {
         },
       },
       borderRadius: {
-        lg: `var(--radius)`,
-        md: `calc(var(--radius) - 2px)`,
+        lg: "var(--radius)",
+        md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
       keyframes: {
         "accordion-down": {
-          from: { height: 0 },
+          from: { height: "0" },
           to: { height: "var(--radix-accordion-content-height)" },
         },
         "accordion-up": {
           from: { height: "var(--radix-accordion-content-height)" },
-          to: { height: 0 },
-        },
-        loading1: {
-          "0%": { opacity: 0 },
-          "20%": { opacity: 0 },
-          "40%": { opacity: 1 },
-          "100%": { opacity: 1 },
-        },
-        loading2: {
-          "0%": { opacity: 0 },
-          "40%": { opacity: 0 },
-          "60%": { opacity: 1 },
-          "100%": { opacity: 1 },
-        },
-        loading3: {
-          "0%": { opacity: 0 },
-          "60%": { opacity: 0 },
-          "80%": { opacity: 1 },
-          "100%": { opacity: 1 },
+          to: { height: "0" },
         },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        loading1: "loading1 1.5s linear infinite",
-        loading2: "loading2 1.5s linear infinite",
-        loading3: "loading3 1.5s linear infinite",
       },
     },
   },
