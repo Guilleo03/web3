@@ -49,11 +49,6 @@ export default function ConfiguracionPage() {
             title="Privacidad"
             description="Configurar"
           />
-          <SettingsItem
-            icon={<HelpCircle className="size-5" />}
-            title="Ayuda"
-            description="Soporte"
-          />
 
           <div className="pt-6">
             <button className="flex items-center text-red-500">

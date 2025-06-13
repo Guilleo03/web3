@@ -2,7 +2,7 @@ import {
   ArrowLeft,
   Shield,
   FileText,
-  Link,
+  Link as LinkIcon,
   FlaskRoundIcon as Flask,
   Home,
   FileIcon,
@@ -10,7 +10,7 @@ import {
   Settings,
   UserCircleIcon as UserCircle,
 } from "lucide-react";
-import Image from "next/image";
+import Link from "next/link";
 import NextLink from "next/link";
 import type React from "react";
 
@@ -30,77 +30,83 @@ export default function AccesosPage() {
       <main className="flex-1 overflow-y-auto p-6 pb-24">
         {/* Hoy (Today) Section */}
         <section className="mb-8">
-          <h2 className="mb-4 text-xl font-semibold">Hoy</h2>
-          <div className="space-y-4">
-            <AccessItem
-              icon={
-                <div className="size-12 overflow-hidden rounded-full">
-                  <UserCircle size={36} strokeWidth={1} />
-                </div>
-              }
-              title="Dr. Emily Carter"
-              time="10:30 AM"
-            />
-            <AccessItem
-              icon={
-                <div className="flex size-12 items-center justify-center rounded-lg bg-[#1e293b]">
-                  <Shield className="size-5" />
-                </div>
-              }
-              title="Seguro médico"
-              time="11:45 AM"
-            />
-          </div>
+          <Link href="/authorization" className="block">
+            <h2 className="mb-4 text-xl font-semibold">Hoy</h2>
+            <div className="space-y-4">
+              <AccessItem
+                icon={
+                  <div className="size-12 overflow-hidden rounded-full">
+                    <UserCircle size={36} strokeWidth={1} />
+                  </div>
+                }
+                title="Dr. Emily Carter"
+                time="10:30 AM"
+              />
+              <AccessItem
+                icon={
+                  <div className="flex size-12 items-center justify-center rounded-lg bg-[#1e293b]">
+                    <Shield className="size-5" />
+                  </div>
+                }
+                title="Seguro médico"
+                time="11:45 AM"
+              />
+            </div>
+          </Link>
         </section>
 
         {/* Ayer (Yesterday) Section */}
         <section className="mb-8">
-          <h2 className="mb-4 text-xl font-semibold">Ayer</h2>
-          <div className="space-y-4">
-            <AccessItem
-              icon={
-                <div className="flex size-12 items-center justify-center rounded-lg bg-[#1e293b]">
-                  <FileText className="size-5" />
-                </div>
-              }
-              title="Prescripción médica"
-              time="2:15 PM"
-            />
-            <AccessItem
-              icon={
-                <div className="flex size-12 items-center justify-center rounded-lg bg-[#1e293b]">
-                  <Link className="size-5" />
-                </div>
-              }
-              title="Farmacia"
-              time="4:50 PM"
-            />
-          </div>
+          <Link href="/authorization" className="block">
+            <h2 className="mb-4 text-xl font-semibold">Ayer</h2>
+            <div className="space-y-4">
+              <AccessItem
+                icon={
+                  <div className="flex size-12 items-center justify-center rounded-lg bg-[#1e293b]">
+                    <FileText className="size-5" />
+                  </div>
+                }
+                title="Prescripción médica"
+                time="2:15 PM"
+              />
+              <AccessItem
+                icon={
+                  <div className="flex size-12 items-center justify-center rounded-lg bg-[#1e293b]">
+                    <LinkIcon className="size-5" />
+                  </div>
+                }
+                title="Farmacia"
+                time="4:50 PM"
+              />
+            </div>
+          </Link>
         </section>
 
         {/* Semana pasada (Last Week) Section */}
         <section>
-          <h2 className="mb-4 text-xl font-semibold">Semana pasada</h2>
-          <div className="space-y-4">
-            <AccessItem
-              icon={
-                <div className="size-12 overflow-hidden rounded-full">
-                  <UserCircle size={36} strokeWidth={1} />
-                </div>
-              }
-              title="Dr. Michael Chen"
-              time="Lunes, 9:00 AM"
-            />
-            <AccessItem
-              icon={
-                <div className="flex size-12 items-center justify-center rounded-lg bg-[#1e293b]">
-                  <Flask className="size-5" />
-                </div>
-              }
-              title="Hospital"
-              time="Martes, 1:30 PM"
-            />
-          </div>
+          <Link href="/authorization" className="block">
+            <h2 className="mb-4 text-xl font-semibold">Semana pasada</h2>
+            <div className="space-y-4">
+              <AccessItem
+                icon={
+                  <div className="size-12 overflow-hidden rounded-full">
+                    <UserCircle size={36} strokeWidth={1} />
+                  </div>
+                }
+                title="Dr. Michael Chen"
+                time="Lunes, 9:00 AM"
+              />
+              <AccessItem
+                icon={
+                  <div className="flex size-12 items-center justify-center rounded-lg bg-[#1e293b]">
+                    <Flask className="size-5" />
+                  </div>
+                }
+                title="Hospital"
+                time="Martes, 1:30 PM"
+              />
+            </div>
+          </Link>
         </section>
       </main>
 
