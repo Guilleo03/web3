@@ -76,7 +76,7 @@ export default function ClinicalHistoryApp() {
           icon={<FileText className="size-5" />}
           label="Historial"
           active={true}
-          href="/histor"
+          href="/history"
         />
         <NavItem
           icon={<Menu className="size-5" />}

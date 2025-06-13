@@ -75,7 +75,7 @@ export default function ConfiguracionPage() {
           icon={<FileText className="size-5" />}
           label="Historial"
           active={false}
-          href="/histor"
+          href="/history"
         />
         <NavItem
           icon={<Menu className="size-5" />}
